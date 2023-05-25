@@ -1,0 +1,32 @@
+/etc/openproject/installer.dat
+
+openproject/edition default
+postgres/autoinstall reuse
+postgres/db_host 10.0.2.130
+postgres/db_port 5432
+postgres/db_username openproject
+postgres/db_password WelCome2021##
+postgres/db_name openproject
+server/autoinstall install
+server/variant apache2
+server/hostname openproject0
+server/server_path_prefix 
+server/ssl no
+repositories/api-key kLZWMFqm1Kl8ct305Ifu728ICLwHgVnE
+repositories/svn-install skip
+repositories/git-install skip
+memcached/autoinstall install
+openproject/admin_email admin@example.net
+
+
+
+####
+
+/etc/postgresql/14/main/postgresql.conf
+
+echo "listen_addresses = '*'"  >> /etc/postgresql/14/main/postgresql.conf
+
+/etc/postgresql/14/main/pg_hba.conf
+
+echo "host    all             all              0.0.0.0/0                       md5" >> /etc/postgresql/14/main/pg_hba.conf
+echo "host    all             all              ::/0                            md5" >> /etc/postgresql/14/main/pg_hba.conf
